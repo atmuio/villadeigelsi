@@ -154,27 +154,31 @@
                 <div class="row width-narrower content-block">
                     <div class="column xl-12">
 
-                        <form name="rform" id="rform" class="reservation-form" method="post" action="" autocomplete="off">
+                        <form name="rform" id="rform" class="reservation-form" method="post" action="php/process-reservation.php" autocomplete="off">
                             <fieldset class="row">
 
                                 <div class="column xl-6 tab-12">
                                     <label for="rname">Nome e Cognome: </label>
-                                    <input type="text" name="rame" id="rname" class="u-fullwidth" placeholder="Marco Rossi" value="">
+                                    <input type="text" name="rame" pattern="[A-Za-zÀ-ÖØ-öø-ÿ\s]+" id="rname" class="u-fullwidth" placeholder="Marco Rossi" value="" required>
+                                    <span class="error-message"></span>
                                 </div>
 
                                 <div class="column xl-6 tab-12">
                                     <label for="rphone">Contatto Telefonico: </label>
-                                    <input type="tel" name="rphone" id="rphone" class="u-fullwidth" placeholder="+39 321 2345678" value="">
+                                    <input type="tel" name="rphone" pattern="[0-9+ ]+" id="rphone" class="u-fullwidth" placeholder="+39 321 2345678" value="" required>
+                                    <span class="error-message"></span>
                                 </div>
 
                                 <div class="column xl-6 tab-12">
                                     <label for="rdate">Data: </label>
-                                    <input type="text" name="rdate" id="rdate" class="u-fullwidth" placeholder="08/01/2023" value="">
+                                    <input type="text" name="rdate" id="rdate" class="u-fullwidth" placeholder="08/01/2023" value="" required>
+                                    <span class="error-message"></span>
                                 </div>
 
                                 <div class="column xl-6 tab-12">
                                     <label for="rparty-size">E-mail:</label>
-                                    <input type="number" name="rparty-size" id="rparty-size" class="u-fullwidth" placeholder="rossi@email.com" value="">
+                                    <input type="email" name="rparty-size" id="rparty-size" class="u-fullwidth" placeholder="rossi@email.com" value="" required>
+                                    <span class="error-message"></span>
                                 </div>
 
                                 <div class="column xl-12 message u-add-bottom">
@@ -186,9 +190,10 @@
                                     <div class="row">
                                         <div class="column xl-6 tab-12">
                                             <label class="rcheckbox u-add-bottom">
-                                                <input type="checkbox">
-                                                <span class="label-text">Ho letto <a href="">l’informativa</a> e autorizzo il trattamento dei miei dati personali per le finalità ivi indicate.</span>
+                                                <input type="checkbox" required>
+                                                <span class="label-text">Ho letto <a href="/infoprvcoks.html">l’informativa</a> e autorizzo il trattamento dei miei dati personali per le finalità ivi indicate.</span>
                                             </label>
+                                            
                                         </div>
         
                                         <div class="column xl-6 tab-12">
@@ -382,7 +387,7 @@
                     <p class="ss-copyright">
                         <span>© <b style="color: var(--color-gray-10);">Villa dei Gelsi </b>2025</span> 
                         <span>P.I. 01339990390</span>
-                        <span><a href="#null">Privacy/Cookie</a></span>
+                        <span><a href="/informativa.html">Privacy/Cookie</a></span>
                         <span>By <a href="https://muio.it/">Muio.</a></span>
                     </p>
                 </div>
@@ -403,6 +408,7 @@
 
     <!-- Java Script
     ================================================== -->
+    <script src="js/form-validation.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 

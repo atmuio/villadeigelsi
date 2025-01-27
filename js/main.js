@@ -1,5 +1,5 @@
 /* ===================================================================
- * Maillard 1.0.0 - Main JS
+ * Villa dei Gelsi - From Maillard 1.0.0 - Main JS
  *
  * ------------------------------------------------------------------- */
 
@@ -260,7 +260,7 @@
 
     }; // end ssMoveTo
 
-
+       
    /* Initialize
     * ------------------------------------------------------ */
     (function ssInit() {
@@ -274,4 +274,4 @@
 
     })();
 
-})(document.documentElement);
+})(document.documentElement);// end Initialize
