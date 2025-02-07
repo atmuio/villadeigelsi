@@ -3549,20 +3549,67 @@ body.menu-is-open {
 /* --------------------------------------------------------------------
  * ## intro bg
  * -------------------------------------------------------------------- */
-.s-intro__bg {
-    display            : block;
-    position           : absolute;
-    top                : 0;
-    left               : 0;
-    right              : 0;
-    bottom             : 0;
-    width              : 100%;
-    height             : 100%;
-    background-image   : url(../images/intro-bg-3000.jpg);
-    background-repeat  : no-repeat;
+ .s-intro__bg {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+    /* IMMAGINE DI FALLBACK */
+    background-image: url("../images/intro-bg-3000.jpg");
+    background-repeat: no-repeat;
     background-position: center;
-    background-size    : cover;
+    background-size: cover;
 }
+
+.s-intro__bg video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+
+.s-intro__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.s-intro__bg video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    display: block;
+}
+
+.fallback-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none; /* L'immagine è nascosta di default */
+}
+
 
 .s-intro__bg::before {
     display       : block;
